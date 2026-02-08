@@ -1,0 +1,1 @@
+Average generations until mutation changes P53 protein: 12667.767
