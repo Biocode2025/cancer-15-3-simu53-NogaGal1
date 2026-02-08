@@ -86,7 +86,8 @@ def RNA_prot(rna_seq):
         protein += aa
     return protein
 
-#### main code #####
+
+#### main #####
 
 def main():
     Read_dict()
@@ -112,12 +113,10 @@ def main():
         while True:
             generations += 1
 
-            # מוטציה מתרחשת רק בהסתברות של 10^-4
             if random.random() < 0.0001:
 
                 mutations = random.random()
 
-                # בחירת סוג מוטציה
                 if mutations < 0.98:
                     mutated_seq = Mutate_DNA(mutated_seq)
                 elif mutations < 0.99:
@@ -127,10 +126,8 @@ def main():
                     mutated_seq = Delete_DNA(mutated_seq)
                     break
 
-                # תרגום לחלבון אחרי המוטציה
                 mutated_prot = RNA_prot(DNA_RNA_Cod(mutated_seq))
 
-                # אם החלבון השתנה – עוצרים את הלולאה
                 if Comp_seq(orig_prot, mutated_prot) > 0:
                     break
 
